@@ -1,0 +1,14 @@
+{
+  "name": "Airplane Simulator",
+  "short_name": "AirSim",
+  "description": "Fly passengers around a 3D open world and earn money.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#071018",
+  "theme_color": "#0b1c2c",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

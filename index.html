@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1c2c" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="description" content="Fly a 3D airplane around the world, deliver passengers, and earn money." />
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icon.svg" />
+  <title>Airplane Simulator</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="hud">
+    <div class="hud-top">
+      <div class="pill"><span>CASH</span><strong id="cash">$2,500</strong></div>
+      <div class="pill"><span>SPEED</span><strong id="speed">0 kt</strong></div>
+      <div class="pill"><span>ALT</span><strong id="alt">0 ft</strong></div>
+      <div class="pill"><span>FUEL</span><strong id="fuel">100%</strong></div>
+    </div>
+    <div class="mission" id="mission">Accept a passenger job from the Jobs panel.</div>
+    <div class="hint" id="nearest"></div>
+  </div>
+  <button id="installBtn" hidden>Install App</button>
+  <div id="menu" class="overlay">
+    <div class="card">
+      <h1>Airplane Simulator</h1>
+      <p>Fly an open world of islands, pick up people who need to travel, and get paid on delivery.</p>
+      <ul>
+        <li><b>Desktop:</b> WASD / arrows fly · Shift throttle · Space land · E interact</li>
+        <li><b>Phone (landscape):</b> left stick steer · right stick throttle/climb · Land / Jobs buttons</li>
+      </ul>
+      <button id="startBtn" class="primary">Take Off</button>
+    </div>
+  </div>
+  <div id="jobs" class="sheet hidden">
+    <h2>Passenger Jobs</h2>
+    <div id="jobList"></div>
+    <button id="closeJobs">Close</button>
+  </div>
+  <div id="touch" class="touch">
+    <div class="stick" id="stickL"><div class="knob"></div></div>
+    <div class="actions">
+      <button id="jobsBtn">Jobs</button>
+      <button id="landBtn">Land</button>
+      <button id="actBtn">Pick Up</button>
+    </div>
+    <div class="stick" id="stickR"><div class="knob"></div></div>
+  </div>
+  <canvas id="c"></canvas>
+  <script type="importmap">
+  { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js" } }
+  </script>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
